@@ -1,0 +1,45 @@
+.box-lateral .logo a::before{
+    border-top: 4px solid #EF2B91;
+    border-left: 4px solid #EF2B91;
+}
+
+.box-lateral .logo a::after{
+    border-bottom: 4px solid #EF2B91;
+    border-right: 4px solid #EF2B91;
+}
+
+.contact .contato-info-item .icon .fa,
+.blog .blog-item-box .blog-info .blog-tags a,
+.lightbox .lightbox-controles .prev-item .fa,
+.lightbox .lightbox-controles .next-item .fa,
+.portfolio .portfolio-item .portfolio-info .icon .fa,
+body.dark .portfolio .portfolio-filtro button.active,
+.portfolio .portfolio-filtro button.active,
+.service .servico-item .servico-item-box .icon .fa,
+.about .about-content .about-text h3 span,
+body.dark .box-lateral .nav li a:hover,
+body.dark .box-lateral .nav li a.active,
+.box-lateral .nav li a:hover,
+
+.box-lateral .nav li a.active{
+    color: #EF2B91;
+}
+
+.blog .blog-item-box .blog-img .blog-data,
+.service .servico-item .servico-item-box:hover .icon,
+.about .about-content .timeline .circle-dot,
+.about .about-content .timeline .timeline-item::before,
+.about .about-content .skill .skill-item .progress .progress-in,
+.btn,
+.titulo-secao h2::before,
+.titulo-secao h2::after,
+.box-lateral .nav-toggler span,
+.box-lateral .nav-toggler span::before,
+.box-lateral .nav-toggler span::after,
+.home .intro .github-link a{
+    background-color: #EF2B91;
+}
+
+.portfolio .portfolio-filtro button.active{
+    border-color: #EF2B91;
+}
