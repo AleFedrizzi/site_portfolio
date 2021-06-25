@@ -77,7 +77,7 @@ lightboxText.innerHTML=portfolioItems[itemIndex].querySelector("h4").innerHTML;
 lightboxCounter.innerHTML= (itemIndex+1) + " of " + totalPortfolioItem;
 }
 
-// Close Lightbox
+// Fechamento do Lightbox
 lightbox.addEventListener("click", function(event){
 if(event.target === lightboxClose || event.target === lightbox){
   toggleLightbox();
@@ -85,3 +85,62 @@ if(event.target === lightboxClose || event.target === lightbox){
 })
 
 
+// Esconder menu
+
+const navTogglerBtn=document.querySelector(".nav-toggler"),
+    aside=document.querySelector(".box-lateral");
+
+navTogglerBtn.addEventListener("click",asideSectionTogglerBtn)
+
+function asideSectionTogglerBtn(){
+    aside.classList.toggle("open");
+    navTogglerBtn.classList.toggle("open");
+    for(let i=0; i<totalSection; i++){
+        allSection[i].classList.toggle("open");
+    }
+}
+
+
+
+// Box lateral - navegação
+const nav=document.querySelector(".nav"),
+    navList=nav.querySelectorAll("li"),
+    totalNavList=navList.length,
+    allSection=document.querySelectorAll(".section"),
+    totalSection=allSection.length;
+
+for(let i=0; i<totalNavList; i++){
+    const a=navList[i].querySelector("a");
+    a.addEventListener("click", function(){
+        
+        //remove Box lateral - navegação
+        for(let i=0; i<totalSection; i++){
+            allSection[i].classList.remove("back-section");
+        }
+        
+        for(let j=0; j<totalNavList; j++){
+            if(navList[j].querySelector("a").classList.contains("active")){
+
+                // adiciona Box lateral - navegação
+                allSection[j].classList.add("back-section");
+            }
+            navList[j].querySelector("a").classList.remove("active");
+
+        }
+
+        this.classList.add("active");
+        showSection(this);
+
+        if(window.innerWidth < 1200){
+            asideSectionTogglerBtn();
+        }
+    })
+}
+
+function showSection(element){
+    for(let i=0; i<totalSection; i++){
+        allSection[i].classList.remove("active");
+    }
+    const target=element.getAttribute("href").split("#")[1];
+    document.querySelector("#"+target).classList.add("active")
+}
